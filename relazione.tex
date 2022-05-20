@@ -88,22 +88,26 @@ Tabella 1: \emph{Confronto delle ampiezze ottenute dai fit con quelle attese}}\\
 Questa analisi preliminare evidenzia un buon grado di compatibilità tra le misure effettuate e i valori attesi, talvolta è però possibile notare una certa discrepanza di cui discuteremo grazie ad ulteriori analisi che abbiamo condotto.
 \subsection{Analisi della risposta in frequenza}
 
+
+In Fig.3 é rappresentato il grafico che permette di osservare l'andamento della tensione ai capi del resistore di ogni filtro e quella del generatore rispetto alla frequenza. Le curve attese sono date dalle formule:
+\\
+\\
+Sempre in Fig.3 è presente il grafico che mostra le gli sfasamenti dei segnali sui tre rami del circuito rispetto al segnale del generatore. Queste curve sono date dalle formule:
+\\
+\\
 \begin{multicols}{2}
-	
-	\includegraphics[width=1\linewidth]{img/Frequenza}
+	\includegraphics[width=1\linewidth]{img/Frequenza}	
 	\includegraphics[width=1\linewidth]{img/Fasi}
-	
-	
 \end{multicols}
 \caption{Figura 3: \emph{Risposta in frequenza dei tre filtri. A sinistra è rappresentata l'ampiezza in funzione della frequenza mentre a destra le fasi rispetto al segnale del generatore. Sono raffigurati i punti sperimentali collegati da delle linee puramente grafiche, mentre sono state utilizzate delle linee rosse tratteggiate per i fit effettuati.}}\\
+É possibile apprezzare i punti in cui le tensioni di due rami si eguagliano, ossia i corssover, nonché il punto massimo della funzione relativa al circuito RLC. Per caratterizzare quantitativamente questi punti sono stati effettuati fit lineari nell'intorno dei corossover, così da poter ottenere il punto di intersezione, e fit a parabola nell'intorno del massimo, per ottenere quest'ultimo. Per quanto riguarda questo, dall'analisi dati si ottiene che il valore della frequenza di risonanza é pari a $ \nu_{0}=(714.7\pm9.7)\: Hz$, compatibile con il valore atteso $ \nu_{0}=(\pm)\: Hz$. Le frequenze di crossover rilevate ($ \nu_{LM}=(487.2\pm2.5)\:Hz, \nu_{LH}=(685\pm47)\:Hz $ e $ \nu_{MH}=(1032\pm67)\:Hz $) non risultano in particolare accordo con i valori attesi ($ \nu_{LM}= \pm \:Hz, \nu_{LH}= \pm \:Hz $ e $ \nu_{MH}= \pm \:Hz $). \\
 
-In Fig.3 é rappresentato il grafico che permette di vedere l'andamento dell'ampiezza dei tre filtri e del generatore rispetto alla frequenza. La scala usata é lineare per entrambi gli assi. Gli andamenti attesi sono dati dalle formule:
-\\
-\\
-É possibile vedere i punti in cui i vari andamenti si sovrappongono nonché il punto massimo della funzione relativa al circuito RLC. Per quanto riguarda quest'ultimo, dal grafico si ottiene che il valore della frequenza di risonanza é pari a $ \nu_{0}= \pm \: Hz$, compatibile con il valore atteso $ \nu_{0}=  \: Hz$. Le frequenze di crossover rilevate ($ \nu_{LM}= \pm \:Hz, \nu_{LH}= \pm \:Hz $ e $ \nu_{MH}= \pm \:Hz $) sono tutte shiftate di circa $ 100 \: Hz $ rispetto ai valori attesi ($ \nu_{LM}= \pm \:Hz, \nu_{LH}= \pm \:Hz $ e $ \nu_{MH}= \pm \:Hz $). Ciò é probabilmente dovuto alla caduta di potenziale che avviene quando tutti e tre i filtri lavorano. Abbiamo infatti notato che il valore di $ V_{in} $ non é costante, ma varia di $ mV $, portanto quindi a dei "salti" nei grafici relativi al woofer ed al tweeter che portano a dei valori di crossover sballati.  
+Per quanto concerne le fasi sono stati adoperati fit lineari nell'intorno dei punti interessati per poter identificare la frequenza in cui la fase del mid range si annulla, ossia in condizioni di prossimità alla risonanza, e quando la somma delle fasi del Tweeter e del Woofer si annulla, ossia nel punto di crossover dei due filtri. L'analisi dati ha restituito un valore della frequenza di risonanza di $ \nu_{0}=(737.4\pm6.0)\: Hz$ e di crossover tra Tweeter e Woofer pari a $ \nu_{LH}=(700\pm16)\:Hz$ che risultano in accordo entro gli errori stimati con i valori precedentemente misurati.
 \section{Conclusioni} 
+\subsection{Analisi discrepanze}
 \section*{Appendice}
 Tutte le formule sono state ricavate tramite il formalismo dei fasori.
+
 \subsection*{Formule per il woofer}
 La relazione
 \begin{equation}\label{V_{L}}

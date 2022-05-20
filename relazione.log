@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.10.3)  21 MAY 2022 01:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7380 64-bit) (preloaded format=pdflatex 2020.10.3)  21 MAY 2022 01:48
 entering extended mode
 **./relazione.tex
 (relazione.tex
@@ -381,30 +381,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
-<img/Frequenza.pdf, id=105, 569.12625pt x 387.4475pt>
-File: img/Frequenza.pdf Graphic file (type pdf)
-<use img/Frequenza.pdf>
-Package pdftex.def Info: img/Frequenza.pdf  used on input line 93.
-(pdftex.def)             Requested size: 245.24199pt x 166.95389pt.
-<img/Fasi.pdf, id=106, 569.12625pt x 387.4475pt>
-File: img/Fasi.pdf Graphic file (type pdf)
-<use img/Fasi.pdf>
-Package pdftex.def Info: img/Fasi.pdf  used on input line 94.
-(pdftex.def)             Requested size: 245.24199pt x 166.95389pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 93--95
-[][]
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
+
  []
 
 
-Overfull \vbox (69.64493pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
+
+ []
 
 
-Overfull \vbox (69.64493pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
+ []
 
-[3 <./img/1500hz.pdf, page is rotated 90 degrees> <./img/Frequenza.pdf, page is
- rotated 90 degrees>]
+[3 <./img/1500hz.pdf, page is rotated 90 degrees>]
+<img/Frequenza.pdf, id=151, 569.12625pt x 387.4475pt>
+File: img/Frequenza.pdf Graphic file (type pdf)
+<use img/Frequenza.pdf>
+Package pdftex.def Info: img/Frequenza.pdf  used on input line 99.
+(pdftex.def)             Requested size: 245.24199pt x 166.95389pt.
+<img/Fasi.pdf, id=152, 569.12625pt x 387.4475pt>
+File: img/Fasi.pdf Graphic file (type pdf)
+<use img/Fasi.pdf>
+Package pdftex.def Info: img/Fasi.pdf  used on input line 100.
+(pdftex.def)             Requested size: 245.24199pt x 166.95389pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 99--101
+[][]
+ []
+
 
 ! LaTeX Error: \caption outside float.
 
@@ -412,51 +419,51 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.98 \caption
-             {Figura 3: \emph{Risposta in frequenza dei tre filtri. A sinist...
+l.102 \caption
+              {Figura 3: \emph{Risposta in frequenza dei tre filtri. A sinis...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--104
-
- []
-
-[4 <./img/Fasi.pdf, page is rotated 90 degrees>]
-Overfull \hbox (48.84996pt too wide) in paragraph at lines 156--158
+[4 <./img/Frequenza.pdf, page is rotated 90 degrees> <./img/Fasi.pdf, page is r
+otated 90 degrees>] [5]
+Overfull \hbox (48.84996pt too wide) in paragraph at lines 160--162
 \OT1/cmr/m/n/10 Se uno svilup-passe esat-ta-mente i cal-coli si ve-drebbe che i
 n-vece di $[]$ a nu-mer-a-tore dovrebbe com-par-ire $[]$,
  []
 
-[5] (relazione.aux) ) 
+[6] (relazione.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2893 strings out of 480898
- 40451 string characters out of 2915050
- 299470 words of memory out of 3000000
- 18749 multiletter control sequences out of 15000+200000
+ 2894 strings out of 480898
+ 40460 string characters out of 2915050
+ 298470 words of memory out of 3000000
+ 18750 multiletter control sequences out of 15000+200000
  538067 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,8n,34p,2357b,220s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmex10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr5.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmti10.pfb>
-Output written on relazione.pdf (5 pages, 400191 bytes).
+ 34i,8n,34p,2357b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmex10.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><D:/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.p
+fb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr17.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb><D:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+
+Output written on relazione.pdf (6 pages, 401917 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
+ 297 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
