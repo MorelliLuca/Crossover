@@ -19,7 +19,14 @@ In questa esperienza di laboratorio abbiamo analizzato il comportamento di un fi
 Abbiamo inoltre analizzato l'andamento dello sfasamento della tensione nei rami rispetto a quella del generatore, da cui abbiamo ottenuto il valore di crossover tra woofer e tweeter e quello di risonanza del ramo di midrange, rispettivamente $ \nu_{LH}=(700\pm16)\:Hz$ e $ \nu_{0}=(737.4\pm6.0)\: Hz$, che sono risultati in accordo con i valori attesi entro gli errori stimati. 
 
 \section{Introduzione}
-Il filtro crossover a tre vie passivo è un particolare tipo di circuito costituito da tre filtri (un passa-basso, un passa-banda ed un passa-alto) posti in parallelo. Questo dispositivo permette di separare i segnali in entrata sui tre rami, ognuno destinato ad un particolare range di frequenze. Questo lo rende molto utile nella riproduzione musicale, in quanto permette di suddividere lo spettro sonoro da riprodurre in più porzioni, da destinare a più altoparlanti separatamente, ciascuno con la propria predisposizione meccanica. In particolare, il ramo contenente l'induttore è filtro passa-basso, destinato alla basse frequenze e detto woofer, mentre il ramo con il condensatore è il filtro passa-alto ed è quindi quello per le frequenze superiori, chiamato tweeter. Vi è quindi il ramo centrale, o di midrange, costituito da un RLC in serie che svolge il ruolo di filtro passa-banda e si occupa delle frequenze intermedie. Il termine passivo deriva dal fatto che sono presenti solo componenti passivi, ovvero che non richiedono alimentazione esterna. Il circuito è caratterizzato dalle frequenze di separazione dei vari filtri, che sono specifiche del circuito e sono dette \textit{frequenze di crossover}. In particolare si dimostra (vedasi appendice) che le tre frequenze sono: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{img/Schema}
+	\caption{}
+	\label{fig:schema}
+\end{figure}
+
+Il filtro crossover a tre vie passivo è un particolare tipo di circuito costituito da tre filtri (un passa-basso, un passa-banda ed un passa-alto) posti in parallelo. Questo dispositivo permette di separare i segnali in entrata sui tre rami, ognuno destinato ad un particolare range di frequenze. Questo lo rende molto utile nella riproduzione musicale, in quanto permette di suddividere lo spettro sonoro da riprodurre in più porzioni, da destinare a più altoparlanti separatamente, ciascuno con la propria predisposizione meccanica. In particolare, il ramo contenente l'induttore è filtro passa-basso, destinato alla basse frequenze e detto woofer, mentre il ramo con il condensatore è il filtro passa-alto ed è quindi quello per le frequenze superiori, chiamato tweeter. Vi è quindi il ramo centrale, o di midrange, costituito da un RLC in serie che svolge il ruolo di filtro passa-banda e si occupa delle frequenze intermedie. Il termine passivo deriva dal fatto che sono presenti solo componenti passivi, ovvero che non richiedono alimentazione esterna. Il circuito è caratterizzato dalle frequenze di separazione dei vari filtri, che sono specifiche del circuito e sono dette \textit{frequenze di crossover}, ossia le frequenze alle quali due rami presentano la stessa tensione ai capi del proprio resistore. In particolare si dimostra (vedasi appendice) che le tre frequenze sono: 
 \begin{equation}\label{crossoverLH}
 	\nu_{LH}=\frac{1}{2\pi\sqrt{C_{M}(L_{M}+L_{L})}}
 \end{equation}
@@ -30,13 +37,15 @@ Il filtro crossover a tre vie passivo è un particolare tipo di circuito costitu
 	\nu_{MH}=\frac{1}{2\pi}\sqrt{\frac{2}{L_{M}C_{M}}}
 \end{equation}
 rispettivamente tra basso-medio, basso-alto e medio-alto. Inoltre per costruzione la frequenza di risonanza del ramo RLC data da:
-\begin{equation}\label{risonanza}
-	risonanza
+\begin{equation}
+  \nu_{Ris}=\nu_0 \sqrt{1-\frac{1}{4Q^2}} \quad  \nu_{0}=\frac{1}{2\pi\sqrt{L_M C_M}} \quad Q=?
 \end{equation}
-dovrebbe avere un valore simile alla frequenza di crossover tra basso e alto. 
+dove per un fattore di qualità $(Q)$ molto elevato $\nu_{Ris}$ tende a $\nu_{0}$. Si tenga inoltre conto che $\nu_{Ris}$ è la frequenza in qui la tensione misurata sul midrange $(V_M)$ è massima mentre $\nu_{0}$ è la frequenza alla quale un'onda sinusoidale generata è in fase con quella misurata ai capi del resistore del ramo centrale$(R_M)$. 
+Inoltre $\nu_{0}$ dovrebbe avere un valore simile alla frequenza di crossover tra basso e alto. 
 \section{Apparato sperimentale e svolgimento}
 %inserire foto schema
 Il filtro crossover `e stato realizzato sulla breadboard della scheda di acquisizione dati NI ELVIS II ed `e schematizzato in Fig. 1. É composto da tre rami connessi in parallelo sottoposti ad una tensione variabile prodotta dal \textit{function generator} (a cui ci si riferirà come FGEN da qui in poi) di ELVIS. Il primo ramo è il woofer ed é costituito da un induttore $ L_{L} = (45.22 \pm 0.45)\:mH $ ed una resistenza $ R_{L} = (149.86 \pm 0.17) \: \Omega $. Il secondo ramo é il midrange, con un induttore $ L_{M} = (39.45 \pm 0.39)\:mH $, un condensatore $ C_{M} = (0.9900 \pm 0.0099)\:\mu F $ ed una resistenza $ R_{M} = (150.15 \pm 0.17) \: \Omega $. L'ultimo ramo é infine il tweeter, su cui sono presenti un condensatore $ C_{H} = (1.00 \pm 0.01)\:\mu F $ ed una resistenza $ R_{H} = (149.86 \pm 0.17) \: \Omega $. Tutti i componenti dei singoli rami sono collegati in serie e condensatori ed induttori hanno resistenza interna trascurabile. Anche FGEN possiede una resistenza interna $ R_{gen} = 50 \: \Omega $ dichiarata dal costruttore. I valori dei vari componenti sono stati misurati tramite il multimetro digitale di ELVIS. In particolare, per le induttanze abbiamo preso il valor medio su 4 misure. Per assicurarci del corretto funzionamento del circuito abbiamo prima di tutto analizzato l'andamento della tensione rispetto al tempo nei tre rami e nel generatore a 3 frequenze, rispettivamente una bassa, una media e una alta. Abbiamo quindi acquisito la tensione in ingresso $ V_{in} $ e quelle ai capi delle resistenze dei 3 rami al variare della frequenza. Per fare ciò abbiamo eseguito uno sweep tramite FGEN, facendo variare la frequenza tra $ 100 $ e $ 3000 \:Hz$ con step di $ 20 \:Hz $. Per l'acquisizione dei dati é stato usato il programma LabView, il cui subVI ``Extract Single Tone Information" ci ha permesso di estrarre per ogni acquisizione ampiezza, fase e frequenza del segnale di tensione. Occorre tener presente che lo sfasamento é rispetto a $ V_{in} $, pertanto dalla fase di ogni ramo ad ogni frequenza si é sottratta la fase corrispondente di FGEN. I dati sono stati acquisiti con una frequenza di campionamento di $ 100\: kHz $ e con numero di campioni pari a $ 2000 $, in modo da avere un numero di punti per periodo sufficientemente elevato mantenendo la forma d'onda.
+\newpage
 \section{Risultati e discussione}
 
 \subsection{Analisi dell'andamento della tensione rispetto al tempo}
@@ -45,6 +54,7 @@ Il filtro crossover `e stato realizzato sulla breadboard della scheda di acquisi
 	\begin{multicols}{2}
 		
 		\includegraphics[width=1\linewidth]{img/100hz}
+		
 		\includegraphics[width=1\linewidth]{img/760hz}
 		
 		
@@ -103,8 +113,9 @@ Sempre in Fig.3 è presente il grafico che mostra le gli sfasamenti dei segnali 
 \pm 7.5 \:Hz $ e $ \nu_{MH}= 1139\pm 11 \:Hz $). \\
 
 Per quanto concerne le fasi sono stati adoperati fit lineari nell'intorno dei punti interessati per poter identificare la frequenza in cui la fase del midrange si annulla, ossia in condizioni di prossimità alla risonanza, e quando la somma delle fasi del Tweeter e del Woofer si annulla, ossia nel punto di crossover dei due filtri. L'analisi dati ha restituito un valore della frequenza di risonanza di $ \nu_{0}=(737.4\pm6.0)\: Hz$ e di crossover tra Tweeter e Woofer pari a $ \nu_{LH}=(700\pm16)\:Hz$ che risultano in accordo entro gli errori stimati con i valori precedentemente misurati.
-\section{Conclusioni} 
 \subsection{Analisi discrepanze}
+\section{Conclusioni} 
+
 \section*{Appendice}
 Tutte le formule sono state ricavate tramite il formalismo dei fasori.
 
