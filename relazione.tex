@@ -22,11 +22,10 @@ Abbiamo inoltre analizzato l'andamento dello sfasamento della tensione nei rami 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\linewidth]{img/Schema}
-	\caption{}
-	\label{fig:schema}
+	Figura 1: \emph{Schema del circuito realizzato.}
 \end{figure}
 
-Il filtro crossover a tre vie passivo è un particolare tipo di circuito costituito da tre filtri (un passa-basso, un passa-banda ed un passa-alto) posti in parallelo. Questo dispositivo permette di separare i segnali in entrata sui tre rami, ognuno destinato ad un particolare range di frequenze. Questo lo rende molto utile nella riproduzione musicale, in quanto permette di suddividere lo spettro sonoro da riprodurre in più porzioni, da destinare a più altoparlanti separatamente, ciascuno con la propria predisposizione meccanica. In particolare, il ramo contenente l'induttore è filtro passa-basso, destinato alla basse frequenze e detto woofer, mentre il ramo con il condensatore è il filtro passa-alto ed è quindi quello per le frequenze superiori, chiamato tweeter. Vi è quindi il ramo centrale, o di midrange, costituito da un RLC in serie che svolge il ruolo di filtro passa-banda e si occupa delle frequenze intermedie. Il termine passivo deriva dal fatto che sono presenti solo componenti passivi, ovvero che non richiedono alimentazione esterna. Il circuito è caratterizzato dalle frequenze di separazione dei vari filtri, che sono specifiche del circuito e sono dette \textit{frequenze di crossover}, ossia le frequenze alle quali due rami presentano la stessa tensione ai capi del proprio resistore. In particolare si dimostra (vedasi appendice) che le tre frequenze sono: 
+Il filtro crossover a tre vie passivo, schematizzato in Fig.1, è un particolare tipo di circuito costituito da tre filtri (un passa-basso, un passa-banda ed un passa-alto) posti in parallelo. Questo dispositivo permette di separare i segnali in entrata sui tre rami, ognuno destinato ad un particolare range di frequenze. Questo lo rende molto utile nella riproduzione musicale, in quanto permette di suddividere lo spettro sonoro da riprodurre in più porzioni, da destinare a più altoparlanti separatamente, ciascuno con la propria predisposizione meccanica. In particolare, il ramo contenente l'induttore è filtro passa-basso, destinato alla basse frequenze e detto woofer, mentre il ramo con il condensatore è il filtro passa-alto ed è quindi quello per le frequenze superiori, chiamato tweeter. Vi è quindi il ramo centrale, o di midrange, costituito da un RLC in serie che svolge il ruolo di filtro passa-banda e si occupa delle frequenze intermedie. Il termine passivo deriva dal fatto che sono presenti solo componenti passivi, ovvero che non richiedono alimentazione esterna. Il circuito è caratterizzato dalle frequenze di separazione dei vari filtri, che sono specifiche del circuito e sono dette \textit{frequenze di crossover}, ossia le frequenze alle quali due rami presentano la stessa tensione ai capi del proprio resistore. In particolare si dimostra (vedasi appendice) che le tre frequenze sono: 
 \begin{equation}\label{crossoverLH}
 	\nu_{LH}=\frac{1}{2\pi\sqrt{C_{M}(L_{M}+L_{L})}}
 \end{equation}
@@ -38,7 +37,7 @@ Il filtro crossover a tre vie passivo è un particolare tipo di circuito costitu
 \end{equation}
 rispettivamente tra basso-medio, basso-alto e medio-alto. Inoltre per costruzione la frequenza di risonanza del ramo RLC data da:
 \begin{equation}
-  \nu_{Ris}=\nu_0 \sqrt{1-\frac{1}{4Q^2}} \quad  \nu_{0}=\frac{1}{2\pi\sqrt{L_M C_M}} \quad Q=?
+  \nu_{Ris}=\nu_0 \sqrt{1-\frac{1}{2Q^2}} \quad  \nu_{0}=\frac{1}{2\pi\sqrt{L_M C_M}} \quad Q=\frac{1}{R_M}\sqrt{\frac{L_M}{C_M}}
 \end{equation}
 dove per un fattore di qualità $(Q)$ molto elevato $\nu_{Ris}$ tende a $\nu_{0}$. Si tenga inoltre conto che $\nu_{Ris}$ è la frequenza in qui la tensione misurata sul midrange $(V_M)$ è massima mentre $\nu_{0}$ è la frequenza alla quale un'onda sinusoidale generata è in fase con quella misurata ai capi del resistore del ramo centrale$(R_M)$. 
 Inoltre $\nu_{0}$ dovrebbe avere un valore simile alla frequenza di crossover tra basso e alto. 
@@ -63,7 +62,8 @@ Il filtro crossover `e stato realizzato sulla breadboard della scheda di acquisi
 		\includegraphics[width=0.5\linewidth]{img/1500hz}
 	}
 
-\caption{Figura 2: \emph{Risposta dei filtri in funzione del tempo a 100Hz, 760Hz e 1500Hz. Sono raffigurati sia i punti sperimentali acquisiti, con dei punti le cui barre d'errore non sono visibili, sia i risultati dei fit effettuati con un tratto continuo. Per ogni fit sono raffigurati gli scarti dai punti sperimentali in un apposito grafico sottostante.}}\\
+\begin{center}Figura 2: \emph{Risposta dei filtri in funzione del tempo a 100Hz, 760Hz e 1500Hz. Sono raffigurati sia i punti sperimentali acquisiti, con dei punti le cui barre d'errore non sono visibili, sia i risultati dei fit effettuati con un tratto continuo. Per ogni fit sono raffigurati gli scarti dai punti sperimentali in un apposito grafico sottostante.}\\
+	\end{center}
 
 In Fig.2 è possibile apprezzare le risposte dei filtri a tre frequenze distinte: come avevamo previsto, a basse frequenze l'ampiezza del woofer é la maggiore, nonché la più vicina a quella del generatore, mentre a medie frequenze é il midrange quello con il segnale più ampio. A $ 1500\: Hz$ invece vediamo che ad avvicinarsi all'ampiezza della sinusoide del generatore é il tweeter. Per ogni frequenza abbiamo effettuato fit con le funzioni di trasferimento dei singoli rami che ci hanno permesso di confrontare (come riportato in Tab. 1) le ampiezze e le fasi misurate con quelle calcolate conoscendo le resistenze, le induttanze e le capacità del circuito.\\
 
@@ -107,13 +107,33 @@ Sempre in Fig.3 è presente il grafico che mostra le gli sfasamenti dei segnali 
 	\includegraphics[width=1\linewidth]{img/Frequenza}	
 	\includegraphics[width=1\linewidth]{img/Fasi}
 \end{multicols}
-\caption{Figura 3: \emph{Risposta in frequenza dei tre filtri. A sinistra è rappresentata l'ampiezza in funzione della frequenza mentre a destra le fasi rispetto al segnale del generatore. Sono raffigurati i punti sperimentali collegati da delle linee puramente grafiche, mentre sono state utilizzate delle linee rosse tratteggiate per i fit effettuati.}}\\
+\begin{center}
+	Figura 3: \emph{Risposta in frequenza dei tre filtri. A sinistra è rappresentata l'ampiezza in funzione della frequenza mentre a destra le fasi rispetto al segnale del generatore. Sono raffigurati i punti sperimentali collegati da delle linee puramente grafiche, mentre sono state utilizzate delle linee rosse tratteggiate per i fit effettuati.}\\
+\end{center}
+
 
 É possibile apprezzare i punti in cui le tensioni di due rami si eguagliano, ossia i crossover, nonché il punto massimo della funzione relativa al circuito RLC. Per caratterizzare quantitativamente questi punti sono stati effettuati fit lineari nell'intorno dei crossover, così da poter ottenere il punto di intersezione, e fit a parabola nell'intorno del massimo, per ottenere quest'ultimo. Per quanto riguarda questo, dall'analisi dati si ottiene che il valore della frequenza di risonanza é pari a $ \nu_{0}=(714.7\pm9.7)\: Hz$, compatibile con il valore atteso $ \nu_{0}=(\pm)\: Hz$. Le frequenze di crossover rilevate ($ \nu_{LM}=(487.2\pm2.5)\:Hz, \nu_{LH}=(685\pm47)\:Hz $ e $ \nu_{MH}=(1032\pm67)\:Hz $) non risultano in particolare accordo con i valori attesi ($ \nu_{LM}= 549.7 \pm 5.5 \:Hz, \nu_{LH}= 748.4
 \pm 7.5 \:Hz $ e $ \nu_{MH}= 1139\pm 11 \:Hz $). \\
 
 Per quanto concerne le fasi sono stati adoperati fit lineari nell'intorno dei punti interessati per poter identificare la frequenza in cui la fase del midrange si annulla, ossia in condizioni di prossimità alla risonanza, e quando la somma delle fasi del Tweeter e del Woofer si annulla, ossia nel punto di crossover dei due filtri. L'analisi dati ha restituito un valore della frequenza di risonanza di $ \nu_{0}=(737.4\pm6.0)\: Hz$ e di crossover tra Tweeter e Woofer pari a $ \nu_{LH}=(700\pm16)\:Hz$ che risultano in accordo entro gli errori stimati con i valori precedentemente misurati.
 \subsection{Analisi discrepanze}
+Una possibile causa delle discrepanze osservate tra risultati sperimentali e valori attesi è la presenza di una componente resistiva interna al Function Generator di Elvis. Tutte le considerazioni teoriche fatte fino ad ora infatti si basano sull'assunzione che la resistenza interna del generatore si limiti ad aumentare la resistenza totale di ogni ramo senza variare la forma delle funzioni di trasferimento. Se questa assunzione non si rivelasse valida la resistenza del generatore dovrebbe generare una ulteriore caduta di potenziale in ogni ramo dipendente dalla frequenza di operazione. Come è possibile osservare in Fig. 3 questo è proprio quanto si verifica sperimentalmente ossia che la tensione misurata ai capi del Function Generator ($V_{Gen}$ in Fig.1) non è costante ma varia con la frequenza generata.\\
+Per valutare quantitativamente quanto questo effetto influisca sulla misura abbiamo effettuato una serie di fit per ogni funzione di risposta in una regione del dominio delle frequenze in cui la tensione del generatore permane con buona approssimazione costante.\\ 
+
+\makebox[\textwidth][c]{
+	\begin{tabular}{|l||c|c|c|c|c|c|c|}
+		\hline
+		Componenete&$R_H$&$C_H$&$R_M$&$L_M$&$C_M$&$R_L$&$L_L$ \\ \hline \hline
+		Misura da fit&$(0.354\pm0.063)V$&$(0.356\pm0.063)V$&$(3.711\pm0.022)V$&$(0.354\pm0.063)V$&$(0.356\pm0.063)V$&$(3.711\pm0.022)V$\\\hline
+		Errore fit\\\hline
+		Misura con multimetro&$(1.94\pm0.23)V$&$(3.274\pm0.036)V$&$(1.94\pm0.23)V$\\\hline
+		Errore multimetro\\\hline
+		
+\end{tabular} }\\
+
+In Tab.3 sono riportati i risultati dei fit effettuati tra i $1500HZ$ e i $3000Hz$, questi fit forniscono resistenze, capacità ed induttanze delle componenti di ogni ramo che sono quindi da confrontare con quelle misurate con il multimetro.  
+Come è possibile osservare i dati ottenuti da questi fit risultano in maggiore accordo con quanto previsto.
+ 
 \section{Conclusioni} 
 
 \section*{Appendice}
