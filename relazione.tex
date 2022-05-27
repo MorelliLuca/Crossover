@@ -6,7 +6,7 @@
  \singlespacing
 %opening
 \title{Analisi di un filtro crossover a tre vie passivo}
-\author{Cristina, Caprioglio, 0000975884}
+\author{Cristina Caprioglio, mat.0000975884, Luca Morelli , mat.0000976485}
 \date{30 Maggio 2022}
 \usepackage[margin=2cm]{geometry}
 \usepackage{amsmath}
@@ -16,10 +16,9 @@
 \maketitle
 
 \section{Abstract}
-In questa esperienza di laboratorio abbiamo analizzato il comportamento di un filtro crossover a tre vie, ossia un filtro passa banda in parallelo con un passa basso e un passa alto, in regime sinusoidale. In particolare, abbiamo acquisito i dati relativi all'ampiezza e alle fasi in funzione della frequenza per ognuno dei tre rami del circuito, in modo da poter stimare i valori delle frequenze di crossover e quello di risonanza relativo al ramo centrale. Per quanto riguarda le prime, i valori ottenuti ($ \nu_{LM}=(487.2\pm2.5)\:Hz, \nu_{LH}=(685\pm47)\:Hz $ e $ \nu_{MH}=(1032\pm67)\:Hz $) sono risultati incompatibili con quelli teorici ($ \nu_{LM}= (549.7 \pm 5.5) \:Hz, \nu_{LH}= (748.4
-\pm 7.5 )\:Hz $ e $ \nu_{MH}= (1139\pm 11 )\:Hz $).
-La frequenza di crossover tra il filtro basso e l'alto è però risultata vicina a quella di risonanza del passa-banda ($ \nu_{0}=(714.7\pm9.7)\: Hz$), compatibile con il suo valore ottenuto dai calcoli ($ \nu_{Ris}=(682\pm12)\: Hz$).
-Abbiamo inoltre analizzato l'andamento dello sfasamento della tensione nei rami rispetto a quella del generatore, da cui abbiamo ottenuto il valore di crossover tra woofer e tweeter e quello di risonanza del ramo di midrange, rispettivamente $ \nu_{LH}=(700\pm16)\:Hz$ e $ \nu_{0}=(737.4\pm6.0)\: Hz$, che sono risultati in accordo con i valori attesi entro gli errori stimati. Le discrepanze rilevate abbiamo supposto fossero dovute sia alla presenza di una resistenza interna al generatore che ha causato una variazione nella funzione di risposta, sia alla misura delle induttanze e delle capacità, il cui valore era soggetto a fluttuazioni.
+In questa esperienza abbiamo analizzato il comportamento di un filtro crossover a tre vie composto da un filtro passa banda in parallelo con un passa basso e un passa alto, in regime sinusoidale. In particolare, abbiamo acquisito i dati relativi alla tensione e alle fasi in funzione della frequenza per ogni filtro, in modo da poter stimare i valori delle frequenze di crossover ($ \nu_{LM}=(487\pm19)\:Hz, \nu_{LH}=(684\pm44)\:Hz $ e $ \nu_{MH}=(1032\pm16)\:Hz $), che non sono risultati in accordo con quelli attesi ($ \nu_{LM}= (549.7 \pm 5.5) \:Hz, \nu_{LH}= (748.4
+\pm 7.5 )\:Hz $ e $ \nu_{MH}= (1139\pm 11 )\:Hz $) e della frequenza di risonanza del filtro passa banda ($ \nu_{Ris}=(714.7\pm43)\: Hz$) che è invece risultato compatibile con quello atteso ($ \nu_{Ris}=(682\pm12)\: Hz$).
+Studiando gli sfasamenti dei segnali filtrati rispetto alla sorgente abbiamo ottenuto un'ulteriore stima di $ \nu_{LH}=(700\pm16)\:Hz$ e di $ \nu_{0}=(737.4\pm6.0)\: Hz$ una frequenza caratteristica del fitro passa banda. Ulteriori analisi ci hanno consentito di identificare come causa principale delle discrepanze la presenza di una resistenza interna al generatore che impedisce di erogare una tensione costante al variare della frequenza.
 
 \section{Introduzione}
 Il filtro crossover a tre vie passivo è un particolare tipo di circuito costituito da tre filtri (un passa-basso, un passa-banda ed un passa-alto) posti in parallelo. Questo dispositivo permette di separare i segnali in entrata sui tre rami, ognuno destinato ad un particolare range di frequenze. Questo lo rende molto utile nella riproduzione musicale, in quanto permette di suddividere lo spettro sonoro da riprodurre in più porzioni, da destinare a più altoparlanti separatamente, ciascuno con la propria predisposizione meccanica. In particolare, il ramo contenente il solo induttore è il filtro passa-basso, destinato alla basse frequenze e detto woofer, mentre il ramo con il solo condensatore è il filtro passa-alto,  selettivo per le frequenze superiori ed è chiamato tweeter. Vi è quindi il ramo centrale, o di midrange, costituito da un RLC in serie che svolge il ruolo di filtro passa-banda e si occupa delle frequenze intermedie. Il termine passivo deriva dal fatto che sono presenti solo componenti passivi, ovvero che non richiedono alimentazione esterna.\\
@@ -51,7 +50,7 @@ Il filtro crossover, schematizzato in Fig. 1, è stato realizzato sulla breadboa
 Il primo ramo è il woofer ed é costituito da un induttore $ L_{L} = (45.22 \pm 0.45)\:mH $ ed una resistenza $ R_{L} = (155.02 \pm 0.17) \: \Omega $. Il secondo ramo é il midrange, con un induttore $ L_{M} = (39.45 \pm 0.39)\:mH $, un condensatore $ C_{M} = (0.9900 \pm 0.0099)\:\mu F $ ed una resistenza $ R_{M} = (153.20 \pm 0.17) \: \Omega $. L'ultimo ramo é infine il tweeter, su cui sono presenti un condensatore $ C_{H} = (1.00 \pm 0.01)\:\mu F $ ed una resistenza $ R_{H} = (149.96 \pm 0.17) \: \Omega $. Tutti i componenti dei singoli rami sono collegati in serie e condensatori ed induttori hanno resistenza interna di cui si tiene già conto nelle resistenze di ogni ramo che sono state misurate come la resistenza totale del ramo. Anche FGEN possiede una resistenza interna $ R_{gen} = 50 \: \Omega $ dichiarata dal costruttore.
 I valori dei vari componenti sono stati misurati tramite il multimetro digitale di ELVIS. In particolare, per le induttanze abbiamo preso il valor medio su 4 misure.\\Per assicurarci del corretto funzionamento del circuito abbiamo prima di tutto analizzato l'andamento della tensione rispetto al tempo nei tre rami e nel generatore a 3 frequenze, rispettivamente una bassa, una media e una alta. Abbiamo quindi acquisito la tensione in ingresso $ V_{in} $ e quelle ai capi delle resistenze dei 3 rami al variare della frequenza. Per fare ciò abbiamo eseguito uno sweep tramite FGEN, facendo variare la frequenza tra $ 100 $ e $ 3000 \:Hz$ con step di $ 20 \:Hz $. 
 Per l'acquisizione dei dati é stato usato il programma LabView, il cui subVI ``Extract Single Tone Information" ci ha permesso di estrarre per ogni acquisizione ampiezza, fase e frequenza del segnale di tensione. Occorre tener presente che lo sfasamento teorico atteso é rispetto a $ V_{in} $, pertanto dalla fase di ogni ramo ad ogni frequenza si é sottratta la fase misurata di FGEN. I dati sono stati acquisiti con una frequenza di campionamento di $ 100\: kHz $ e con numero di campioni pari a $ 2000 $, in modo da avere un numero di punti per periodo sufficientemente elevato mantenendo la forma d'onda.\\
-Per ogni acquisizione effettuata è stato inoltre stimato l'errore sulla misura diretta acquisendo un semiperiodo di onda quadra per la tensione in funzione del tempo e un'onda di frequenza costante per le tensioni e fasi in funzione della frequenza. Utilizzando qualche centinaio di punti ciascuno è quindi stata calcolata la semi dispersione massima del campione che è stata utilizzata come stima dell'errore generato da FGEN e l'apparato di acquisizione.
+Per ogni acquisizione effettuata è stato inoltre stimato l'errore sulla misura diretta acquisendo un semiperiodo di onda quadra per la tensione in funzione del tempo e un'onda di frequenza costante per le tensioni e fasi in funzione della frequenza. Utilizzando qualche centinaio di punti ciascuno è quindi stata calcolata la semi dispersione massima del campione che è stata utilizzata come stima dell'errore generato da FGEN e l'apparato di acquisizione.\newpage
 \section{Risultati e discussione}
 
 \subsection{Analisi dell'andamento della tensione rispetto al tempo}
@@ -141,53 +140,48 @@ Come è possibile osservare i dati ottenuti da questi fit evidenziano una maggio
 Ulteriori fonti di errore sono state identificate nella misura delle induttanze e delle capacità: si è infatti osservato che nell'arco di una mattinata il loro valore è risultato soggetto a fluttuazioni, per questo motivo si è infatti considerato un valore medio tra più misure delle induttanze come miglior stima.  
 \section{Conclusioni} 
 L'esperimento ha parzialmente confermato il comportamento teorico del filtro studiato consentendo una stima dei valori delle frequenze di crossover $ \nu_{LM}=(487\pm19)\:Hz$,  $£ \nu_{LH}=(684\pm44)\:Hz $ e $ \nu_{MH}=(1032\pm16)\:Hz $ e di risonanza del circuito RLC  $ \nu_{Ris}=(714\pm43)\: Hz$. Se da un lato è risultata evidente la capacità filtrante del circuito da un punto di vista quantitativo le frequenze caratteristiche del circuito misurate non si sono rivelate in pieno accordo con quelle attese. Ulteriori analisi ci hanno consentito di identificare come la sorgente principale di tali errori nella presenza di una resistenza interna del generatore di tensione che influisce sulle funzioni di trasferimento dei singoli rami. Tale effetto è facilmente osservabile studiando la tensione generata a frequenze diverse, la quale non si è rivelata essere costante come supposto.
-\section*{Appendice}
-Tutte le formule sono state ricavate tramite il formalismo dei fasori. Per ricavare le formule è stata considerata anche la resistenza di FGEN $ R_{gen} $ trascurando però i suoi effetti sulle funzioni di trasferimento così da mantenere i singoli rami indipendenti tra loro. Abbiamo inoltre considerato $ V_{in} $ costante nel tempo.\\
-\textbf{Formule per il woofer}
-
+\newpage
+{\large \textbf{Appendice: }}
+Tutte le formule sono state ricavate tramite il formalismo dei fasori. Per ricavare le formule è stata considerata la resistenza di FGEN $ R_{gen} $ considerando però i singoli rami indipendenti tra loro.\\
+Utilizzando la legge per le maglie di Kirchoff su ogni ramo del circuito abbiamo ricavato la funzione di trasferimento di ogni filtro, il cui modulo regola la tensione misurata sul ramo e il cui argomento regola la fase.\\
+$ \bullet \: $\textbf{Formule per il woofer} {\small\emph{($V_L=R_L I$)}}
 \begin{equation}\label{V_{L}}
-	\lvert V_{L} \rvert =\frac{V_{in}}{\sqrt{\frac{(R_{gen}+R_{L})^{2}}{R_{L}^{2}}+\frac{\omega^{2}L_{L}^{2}}{R_{L}^{2}}}} \Longrightarrow \lvert H(\omega)\rvert=\frac{	\lvert V_{L} \rvert}{V_{in}}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{L})^2}{R_{L}^{2}}+\frac{\omega^{2}L_{L}^{2}}{R_{L}^{2}}}}
+	\vec{V_0}=(R_{gen}+R_L+ \frac{1}{j\omega C_L})\vec{I}\quad  \Longrightarrow \quad \lvert H(\omega)\rvert=\frac{	\lvert \vec{ V_{L}} \rvert}{\lvert \vec{ V_{0}} \rvert}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{L})^2}{R_{L}^{2}}+\frac{\omega^{2}L_{L}^{2}}{R_{L}^{2}}}}
 \end{equation}
-L'Eq.(5) determina la relazione tra il modulo del fasore della risposta e quello del generatore, nonché la risposta in ampiezza della risposta in frequenza.\\
-\textbf{Formule per il tweeter}
+$ \bullet \: $\textbf{Formule per il tweeter} {\small\emph{($V_H=R_H I$)}}
 \begin{equation}\label{V_{H}}
-	\lvert V_{H} \rvert =\frac{V_{in}}{\sqrt{\frac{(R_{gen}+R_{H})^{2}}{R_{H}^{2}}+\frac{1}{\omega^{2}C_{H}^{2}R_{H}^{2}}}} \Longrightarrow \lvert H(\omega)\rvert=\frac{	\lvert V_{H} \rvert}{V_{in}}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{H})^{2}}{R_{H}^{2}}+\frac{1}{\omega^{2}C_{H}^{2}R_{H}^{2}}}}
+\vec{V_0}=(R_{gen}+R_H+j\omega L_H)\vec{I} \quad \Longrightarrow \quad \lvert H(\omega)\rvert=\frac{	\lvert \vec{V_H} \rvert}{\lvert \vec{V_0}} \rvert=\frac{1}{\sqrt{\frac{(R_{gen}+R_{H})^{2}}{R_{H}^{2}}+\frac{1}{\omega^{2}C_{H}^{2}R_{H}^{2}}}}
 \end{equation}
-L'Eq.(8) determina la relazione tra il modulo del fasore della risposta e quello del generatore, nonché la risposta in ampiezza della risposta in frequenza.\\
-\textbf{Formule per il midrange}
+$ \bullet \: $\textbf{Formule per il midrange} {\small\emph{($V_M=R_M I$)}}
 \begin{equation}\label{V_{M}}
-	\lvert V_{M} \rvert =\frac{V_{in}}{\sqrt{\frac{(R_{gen}+R_{M})^{2}}{R_{M}^{2}}+\frac{1}{R_{M}^{2}}\left( \omega L_{M}-\frac{1}{\omega C_{M}}\right) ^{2}}} \Longrightarrow \lvert H(\omega)\rvert=\frac{	\lvert V_{M} \rvert}{V_{in}}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{L})^{2}}{R_{M}^{2}}+\frac{1}{R_{M}^{2}}\left( \omega L_{M}-\frac{1}{\omega C_{M}}\right) ^{2}}}
+	\vec{V_0}=(R_{gen}+R_M+ \frac{1}{j\omega C_M}+j\omega L_M)\vec{I} \quad \Longrightarrow \quad \lvert H(\omega)\rvert=\frac{	\lvert \vec{V_M} \rvert}{\lvert \vec{V_0} \rvert}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{L})^{2}}{R_{M}^{2}}+\frac{1}{R_{M}^{2}}\left( \omega L_{M}-\frac{1}{\omega C_{M}}\right) ^{2}}}
 \end{equation}
-L'Eq.(11) determina la relazione tra il modulo del fasore della risposta e quello del generatore, nonché la risposta in ampiezza della risposta in frequenza.\\
 \textbf{Formule per le frequenze di crossover}\\
-Per trovare i valori delle frequenze di crossover abbiamo eguagliato i moduli delle funzioni di risposta in ampiezza dei rami, ricavando $\omega$ e dividendo poi per $ 2\pi $. In tutte e tre le formule sono stati semplificati i termini con le resistenze, in quanto, nonostante il loro valore non fosse esattamente identico, la modifica alla frequenza era nell'ordine dei decimi di Hz, con un errore relativo minore dello 0.1\% \\
-$ \bullet  \:$\textbf{Crossover tra woofer e tweeter}
+Per trovare le frequenze di crossover abbiamo eguagliato i moduli delle funzioni di trasferimento dei rami due a due e ricavato $\omega$. In tutte e tre le formule, nonostante il loro valore non fosse identico, sono state semplificate le resistenze poichè l' errore dovuto a questa approssimazione si è rivelato inferiore a quello sulla misura. Per analoghe motivazioni abbiamo considerato le capacità con lo stesso valore (Eq.(10)). Non è invece stato possibile effettuare la stessa approssimazione anche per le induttanze (Eq.(9)).\\
+$ \bullet  \:$\textbf{Crossover tra woofer e tweeter:}
 L'Eq.(1) si ottiene da:
 \begin{equation}\label{crossoverLH_H}
-	\frac{1}{\sqrt{\frac{(R_{gen}+R_{L})^{2}}{R_{L}^{2}}+\frac{\omega^{2}L_{L}^{2}}{R_{L}^{2}}}}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{H})^{2}}{R_{H}^{2}}+\frac{1}{\omega^{2}C_{H}^{2}R_{H}^{2}}}}  \Longrightarrow \nu_{LH}=\frac{\omega_{LH}}{2\pi}=\frac{1}{2\pi\sqrt{L_{L}C_{H}}}
+	\frac{1}{\sqrt{\frac{(R_{gen}+R_{L})^{2}}{R_{L}^{2}}+\frac{\omega^{2}L_{L}^{2}}{R_{L}^{2}}}}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{H})^{2}}{R_{H}^{2}}+\frac{1}{\omega^{2}C_{H}^{2}R_{H}^{2}}}} \quad \Longrightarrow \quad \nu_{LH}=\frac{\omega_{LH}}{2\pi}=\frac{1}{2\pi\sqrt{L_{L}C_{H}}}
 \end{equation}
-$ \bullet \: $\textbf{Crossover tra woofer e midrange}
+$ \bullet \: $\textbf{Crossover tra woofer e midrange:}
 L'Eq.(2) si ottiene da:
 \begin{equation}\label{crossoverLM_H}
-\frac{1}{\sqrt{\frac{(R_{gen}+R_{L})^{2}}{R_{L}^{2}}+\frac{\omega^{2}L_{L}^{2}}{R_{L}^{2}}}}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{M})S^{2}}{R_{M}^{2}}+\frac{1}{R_{M}^{2}}\left( \omega L_{M}-\frac{1}{\omega C_{M}}\right) ^{2}}}  \Longrightarrow \nu_{LM}=\frac{\omega_{LM}}{2\pi}=\frac{1}{2\pi\sqrt{C_{M}(L_{M}+L_{L})}}
+\frac{1}{\sqrt{\frac{(R_{gen}+R_{L})^{2}}{R_{L}^{2}}+\frac{\omega^{2}L_{L}^{2}}{R_{L}^{2}}}}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{M})S^{2}}{R_{M}^{2}}+\frac{1}{R_{M}^{2}}\left( \omega L_{M}-\frac{1}{\omega C_{M}}\right) ^{2}}} \quad  \Longrightarrow \quad \nu_{LM}=\frac{\omega_{LM}}{2\pi}=\frac{1}{2\pi\sqrt{C_{M}(L_{M}+L_{L})}}
 \end{equation}
-É possibile notare a denominatore un termine dato dalla somma delle due induttanze. Questo perché, nonostante avessimo scelto due induttori con gli stessi valori teorici, dalla misura con il multimetro sono risultate due induttanze abbastanza diverse. Se si fossero considerate uguali e si fosse deciso di tenere o una o l'altra moltiplicando il valore per 2 si sarebbero ottenute due frequenze distanti qualche decina di Hz da quella ottenuta con l'Eq.(2). \\
-$ \bullet  \:$\textbf{Crossover tra midrange e tweeter} \\
+$ \bullet  \:$\textbf{Crossover tra midrange e tweeter:} 
 L'Eq.(3) si ottiene da:
 \begin{equation}\label{crossoverMH_H}
-	\frac{1}{\sqrt{\frac{(R_{gen}+R_{M})^{2}}{R_{M}^{2}}+\frac{1}{R_{M}^{2}}\left( \omega L_{M}-\frac{1}{\omega C_{M}}\right) ^{2}}}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{H})^{2}}{R_{H}^{2}}+\frac{1}{\omega^{2}C_{H}^{2}R_{H}^{2}}}} \Longrightarrow \nu_{MH}=\frac{\omega_{MH}}{2\pi}=\frac{1}{2\pi}\sqrt{\frac{2}{L_{M}C_{M}}}
+	\frac{1}{\sqrt{\frac{(R_{gen}+R_{M})^{2}}{R_{M}^{2}}+\frac{1}{R_{M}^{2}}\left( \omega L_{M}-\frac{1}{\omega C_{M}}\right) ^{2}}}=\frac{1}{\sqrt{\frac{(R_{gen}+R_{H})^{2}}{R_{H}^{2}}+\frac{1}{\omega^{2}C_{H}^{2}R_{H}^{2}}}} \quad \Longrightarrow \quad \nu_{MH}=\frac{\omega_{MH}}{2\pi}=\frac{1}{2\pi}\sqrt{\frac{2}{L_{M}C_{M}}}
 \end{equation}
-Se uno sviluppasse esattamente i calcoli si vedrebbe che invece di $ \sqrt{2} $ a numeratore dovrebbe comparire \\
-$ \sqrt{1+\sqrt{1-1.96\times 10^{-28}}} $, che é però approssimabile a $ \sqrt{2} $ con errore tendente a 0.\\
-\textbf{Formule per la risposta in fase}\\
-Sia $\nu_{LH}$ (vedi Eq.(1)) la frequenza di crossover tra tweeter e woofer. Allora si avrà (considerando $ R_{L} $ e $ R_{H} $ approssimabili allo stesso valore):
+%Se si sviluppasse esattamente i calcoli si vedrebbe che invece di $ \sqrt{2} $ a numeratore dovrebbe comparire \\
+%$ \sqrt{1+\sqrt{1-1.96\times 10^{-28}}} $, che é però approssimabile a $ \sqrt{2} $.\\
+\textbf{Considerazioni sulle fasi}\\
+Alla frequenza di crossover tra tweeter e woofer $\nu_{LH}$ (vedi Eq.(1)), considerando $ R_{L} \approx R_{H} $, si avrà :
 \begin{equation}
-\begin{split}
-\phi_{L}(\nu_{LH})+\phi_{H}(\nu_{LH})= & \arctan \left( -\frac{2\pi\frac{1}{2\pi\sqrt{L_{L}C_{H}}} L_{L}}{(R_{gen}+R_{L})}\right)+\arctan \left( \frac{1}{2\pi\frac{1}{2\pi\sqrt{L_{L}C_{H}}} (R_{gen}+R_{H})C_{H}}\right)= \\&  =-\arctan\left(\frac{\sqrt{\frac{L_{L}}{C_{H}}}}{(R_{gen}+R_{L})}\right)+\arctan\left(\frac{\sqrt{\frac{L_{L}}{C_{H}}}}{(R_{gen}+R_{H})}\right)=0
-\end{split} 
+\phi_{L}(\nu_{LH})+\phi_{H}(\nu_{LH})  = \arctan \left( -\frac{2\pi\frac{1}{2\pi\sqrt{L_{L}C_{H}}} L_{L}}{(R_{gen}+R_{L})}\right)+\arctan \left( \frac{1}{2\pi\frac{1}{2\pi\sqrt{L_{L}C_{H}}} (R_{gen}+R_{H})C_{H}}\right)=0 
 \end{equation} 
-Sia $\nu_{0}$ (vedi Eq.(4)) la frequenza caratteristica del ramo midrange. Allora si avrà:
+Alla frequenza caratteristica del ramo midrange $\nu_{0}$ (vedi Eq.(4)) si avrà:
 \begin{equation}
-	\phi_{M}(\nu_{0})=\arctan \left( \frac{1-(2\pi\frac{1}{2\pi\sqrt{L_M C_M}})^{2}L_{M}C_{M}}{ 2\pi\frac{1}{2\pi\sqrt{L_M C_M}} (R_{gen}+R_{L})C_{M}}\right)=\arctan (0)=0
+	\phi_{M}(\nu_{0})=\arctan \left( \frac{1-(2\pi\frac{1}{2\pi\sqrt{L_M C_M}})^{2}L_{M}C_{M}}{ 2\pi\frac{1}{2\pi\sqrt{L_M C_M}} (R_{gen}+R_{L})C_{M}}\right)=\arctan \left( \frac{0}{ 2\pi\frac{1}{2\pi\sqrt{L_M C_M}} (R_{gen}+R_{L})C_{M}}\right)=\arctan (0)=0
 \end{equation}
 \end{document}
